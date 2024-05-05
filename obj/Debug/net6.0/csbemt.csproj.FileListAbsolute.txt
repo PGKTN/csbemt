@@ -310,3 +310,22 @@ C:\Users\imsuh\OneDrive - 한서대학교\1_대학\2_ADOLAB\2_개인연구\1_BEM
 C:\Users\imsuh\OneDrive - 한서대학교\1_대학\2_ADOLAB\2_개인연구\1_BEMT\csbemt\csbemt\csbemt\obj\Debug\net6.0\csbemt.csproj.CopyComplete
 C:\Users\imsuh\OneDrive - 한서대학교\1_대학\2_ADOLAB\2_개인연구\1_BEMT\csbemt\csbemt\csbemt\obj\Debug\net6.0\csbemt.genruntimeconfig.cache
 C:\Users\imsuh\OneDrive - 한서대학교\1_대학\2_ADOLAB\2_개인연구\1_BEMT\csbemt\csbemt\csbemt\obj\Debug\net6.0\ref\csbemt.dll
+C:\csbemt\bin\Debug\net6.0\csbemt.exe
+C:\csbemt\bin\Debug\net6.0\csbemt.deps.json
+C:\csbemt\bin\Debug\net6.0\csbemt.runtimeconfig.json
+C:\csbemt\bin\Debug\net6.0\csbemt.dll
+C:\csbemt\bin\Debug\net6.0\csbemt.pdb
+C:\csbemt\bin\Debug\net6.0\MathNet.Numerics.dll
+C:\csbemt\obj\Debug\net6.0\csbemt.csproj.AssemblyReference.cache
+C:\csbemt\obj\Debug\net6.0\Interop.Microsoft.Office.Interop.Excel.dll
+C:\csbemt\obj\Debug\net6.0\csbemt.csproj.ResolveComReference.cache
+C:\csbemt\obj\Debug\net6.0\csbemt.GeneratedMSBuildEditorConfig.editorconfig
+C:\csbemt\obj\Debug\net6.0\csbemt.AssemblyInfoInputs.cache
+C:\csbemt\obj\Debug\net6.0\csbemt.AssemblyInfo.cs
+C:\csbemt\obj\Debug\net6.0\csbemt.csproj.CoreCompileInputs.cache
+C:\csbemt\obj\Debug\net6.0\csbemt.csproj.CopyComplete
+C:\csbemt\obj\Debug\net6.0\csbemt.dll
+C:\csbemt\obj\Debug\net6.0\refint\csbemt.dll
+C:\csbemt\obj\Debug\net6.0\csbemt.pdb
+C:\csbemt\obj\Debug\net6.0\csbemt.genruntimeconfig.cache
+C:\csbemt\obj\Debug\net6.0\ref\csbemt.dll

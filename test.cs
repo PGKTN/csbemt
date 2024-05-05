@@ -20,7 +20,7 @@ namespace csbemt
     {
         static void Main()
         {
-            ReadWriteINIfile ini = new ReadWriteINIfile(@"C:\Users\imsuh\OneDrive - 한서대학교\1_대학\2_ADOLAB\2_개인연구\1_BEMT\csbemt\csbemt\csbemt\rotor3.ini");
+            ReadWriteINIfile ini = new ReadWriteINIfile(@"C:\csbemt\rotor5.ini");
 
             double rho = double.Parse(ini.ReadINI("fluid", "rho"));
 
@@ -64,15 +64,15 @@ namespace csbemt
 
             for (int i = 0; i < sections.Length; i++)
                 Console.WriteLine("twist[" + i + "] : " + theta[i]);
+
             Console.WriteLine();
-            Console.WriteLine(); Console.WriteLine(); Console.WriteLine(); Console.WriteLine(); Console.WriteLine();
             double sigma = 0.0;
             sigma = (Nb * chord[sections.Length - 1] * (radius[sections.Length - 1] - radius[0])) / (Math.PI * Math.Pow(radius[sections.Length - 1], 2));
             Console.WriteLine("sigma : " + sigma);
 
             double dy = 0.0;
             dy = (radius[sections.Length - 1] - radius[0]) / sections.Length;
-            //Console.WriteLine("dy : " + dy);
+            Console.WriteLine("dy : " + dy);
 
             // dat 파일의 모든 정보를 저장하는 배열
             List<double> airfoil_alpha = new List<double>();
@@ -85,7 +85,7 @@ namespace csbemt
 
             ReadData Read = new ReadData();
 
-            string file_path = @"C:\Users\imsuh\OneDrive - 한서대학교\1_대학\2_ADOLAB\2_개인연구\1_BEMT\csbemt\csbemt\csbemt\NACA_4412.dat";
+            string file_path = @"C:\csbemt\NACA_0012.dat";
 
             (airfoil_alpha, airfoil_Cl, airfoil_Cd) = Read.Airfoil_dat(file_path, airfoil_alpha, airfoil_Cl, airfoil_Cd);
 
@@ -101,7 +101,7 @@ namespace csbemt
             rambda = Calc.Get_rambda(Ct);
             Console.WriteLine("rambda : " + rambda);
             Console.WriteLine();
-            Console.WriteLine(); Console.WriteLine(); Console.WriteLine(); Console.WriteLine(); Console.WriteLine(); Console.WriteLine(); Console.WriteLine(); Console.WriteLine(); Console.WriteLine();
+
             List<double> U = new List<double>();
             List<double> UT = new List<double>();
             List<double> UP = new List<double>();
@@ -124,9 +124,6 @@ namespace csbemt
                 Console.WriteLine("alpha[" + i + "] : " + alpha[i]);
             }
             Console.WriteLine();
-
-
-
 
 
             // dat파일에서 twist에 가장 근접한 alpha 찾기 
@@ -175,7 +172,7 @@ namespace csbemt
                 U.Add(Calc.Get_U(UT[i], UP[i]));
 
                 //Console.WriteLine(UT[i] + " " + UP[i] + " " + U[i]);
-                Console.WriteLine("U[i] : " + U[i]);
+                Console.WriteLine("U[" + i + "] : " + U[i]);
             }
             Console.WriteLine();
 
@@ -220,9 +217,6 @@ namespace csbemt
             Console.WriteLine();
 
 
-
-
-
             double Thrust = 0.0;
             List<double> dT = new List<double>();
             for (int i = 0; i < sections.Length; i++)
@@ -264,7 +258,6 @@ namespace csbemt
             Console.WriteLine("Power : " + Power);
 
 
-            int niasdfniasd = 0;
 
             //double test = GaussLegendreRule.Integrate( => 9, 0.0, 2 * Math.PI, 10);
             //Console.WriteLine(test);

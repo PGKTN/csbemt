@@ -38,7 +38,7 @@ namespace csbemt
             double Ct = 0;
 
             // 반복 식을 진행하기 위한 초기값.
-            double Ct_ = 0.05;
+            double Ct_ = 0.0001;
 
             while (1 > 0)
             {

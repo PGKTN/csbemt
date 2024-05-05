@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\csbemt\\csbemt\\csbemt\\csbemt\\csbemt.csproj": {}
+    "C:\\csbemt\\csbemt.csproj": {}
   },
   "projects": {
-    "C:\\csbemt\\csbemt\\csbemt\\csbemt\\csbemt.csproj": {
+    "C:\\csbemt\\csbemt.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\csbemt\\csbemt\\csbemt\\csbemt\\csbemt.csproj",
+        "projectUniqueName": "C:\\csbemt\\csbemt.csproj",
         "projectName": "csbemt",
-        "projectPath": "C:\\csbemt\\csbemt\\csbemt\\csbemt\\csbemt.csproj",
+        "projectPath": "C:\\csbemt\\csbemt.csproj",
         "packagesPath": "C:\\Users\\imsuh\\.nuget\\packages\\",
-        "outputPath": "C:\\csbemt\\csbemt\\csbemt\\csbemt\\obj\\",
+        "outputPath": "C:\\csbemt\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
