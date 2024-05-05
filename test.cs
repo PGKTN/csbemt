@@ -89,12 +89,13 @@ namespace csbemt
 
             (airfoil_alpha, airfoil_Cl, airfoil_Cd) = Read.Airfoil_dat(file_path, airfoil_alpha, airfoil_Cl, airfoil_Cd);
 
-            double Cl_alpha = 0.0;
-            Cl_alpha = Calc.Get_Cl_alpha(airfoil_Cl[200], airfoil_Cl[181], airfoil_alpha[200], airfoil_alpha[181]);
+            double Cl_alpha = 2 * Math.PI;
             Console.WriteLine("Cl_alpha : " + Cl_alpha);
 
+            double B = 0.95;
+
             double Ct = 0.0;
-            Ct = Calc.Get_Ct(sigma, Cl_alpha, theta[0]);
+            Ct = Calc.Get_Ct(sigma, Cl_alpha, theta[0], B);
             Console.WriteLine("Ct : " + Ct);
 
             double rambda = 0.0;
@@ -103,9 +104,13 @@ namespace csbemt
             Console.WriteLine();
 
             List<double> U = new List<double>();
-            List<double> UT = new List<double>();
-            List<double> UP = new List<double>();
             List<double> phi = new List<double>();
+
+            for (int i = 0; i < sections.Length; i++)
+            {
+                U.Add(Calc.Get_UT(omega, radius[i]));
+                Console.WriteLine("U[" + i + "] : " + U[i]);
+            }
 
             // "phi = rambda / r", "r = 블레이드의 상대 위치" 
             for (int i = 0; i < sections.Length; i++)
@@ -163,26 +168,11 @@ namespace csbemt
             }
             Console.WriteLine();
 
-
-
-            for (int i = 0; i < sections.Length; i++)
-            {
-                UT.Add(Calc.Get_UT(omega, radius[i]));
-                UP.Add(Calc.Get_UP(phi[i], UT[i]));
-                U.Add(Calc.Get_U(UT[i], UP[i]));
-
-                //Console.WriteLine(UT[i] + " " + UP[i] + " " + U[i]);
-                Console.WriteLine("U[" + i + "] : " + U[i]);
-            }
-            Console.WriteLine();
-
-
-
             double Lift = 0.0;
             List<double> dL = new List<double>();
             for (int i = 0; i < sections.Length; i++)
             {
-                dL.Add(Calc.Get_dL(rho, Nb, U[i], chord[i], Cl[i], dy));
+                dL.Add(Calc.Get_dL(rho, U[i], chord[i], Cl[i], dy));
                 Console.WriteLine("dL[" + i + "] : " + dL[i]);
 
                 Lift += dL[i];
@@ -193,7 +183,7 @@ namespace csbemt
             List<double> dD = new List<double>();
             for (int i = 0; i < sections.Length; i++)
             {
-                dD.Add(Calc.Get_dD(rho, Nb, U[i], chord[i], Cd[i], dy));
+                dD.Add(Calc.Get_dD(rho, U[i], chord[i], Cd[i], dy));
                 Console.WriteLine("dD[" + i + "] : " + dD[i]);
 
                 Drag += dD[i];
@@ -224,7 +214,7 @@ namespace csbemt
                 dT.Add(Calc.Get_dT(Nb, dFz[i]));
                 Console.WriteLine("dT[" + i + "] : " + dT[i]);
 
-                Thrust += dT[i];
+                Thrust += 2 * (Math.PI) * radius[i] * dT[i];
             }
             Console.WriteLine();
 
@@ -236,7 +226,7 @@ namespace csbemt
                 dQ.Add(Calc.Get_dQ(dT[i], radius[i]));
                 Console.WriteLine("dQ[" + i + "] : " + dQ[i]);
 
-                Torque += dQ[i];
+                Torque += 2 * (Math.PI) * radius[i] * dQ[i];
             }
             Console.WriteLine();
 
@@ -247,7 +237,7 @@ namespace csbemt
                 dP.Add(Calc.Get_dP(dQ[i], omega));
                 Console.WriteLine("dP[" + i + "] : " + dP[i]);
 
-                Power += dP[i];
+                Power += 2 * (Math.PI) * radius[i] * dP[i];
             }
             Console.WriteLine();
 

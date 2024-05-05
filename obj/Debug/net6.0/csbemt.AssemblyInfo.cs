@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("csbemt")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+55f18f5b4df3893a3c35be678e44134a29f08bd3")]
 [assembly: System.Reflection.AssemblyProductAttribute("csbemt")]
 [assembly: System.Reflection.AssemblyTitleAttribute("csbemt")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -33,16 +33,16 @@ namespace csbemt
             return num * Math.PI / 180;
         }
 
-        public double Get_Ct(double sigma, double Cl_alpha, double theta)
+        public double Get_Ct(double sigma, double Cl_alpha, double theta, double B)
         {
             double Ct = 0;
 
             // 반복 식을 진행하기 위한 초기값.
-            double Ct_ = 0.0001;
+            double Ct_ = 0.005;
 
             while (1 > 0)
             {
-                Ct = 0.5 * sigma * Cl_alpha * ((To_Radian(theta) / 3) - (0.5 * Math.Sqrt(Ct_ / 2)));
+                Ct = 0.5 * sigma * Cl_alpha * Math.Pow(B, 2) * ((To_Radian(theta) * B / 3) - (0.5 * Math.Sqrt(Ct_ / 2)));
 
                 if (Math.Abs(Ct - Ct_) <= Math.Pow(10, -12))
                     break;
@@ -83,13 +83,13 @@ namespace csbemt
             return Ct * rho * Math.PI * Math.Pow(radius, 2) * Math.Pow(omega * radius, 2);
         }
 
-        public double Get_dL(double rho, double Nb, double U, double chord, double Cl, double dy)
+        public double Get_dL(double rho, double U, double chord, double Cl, double dy)
         {
-            return 0.5 * rho * Nb * Math.Pow(U, 2) * chord * Cl * dy;
+            return 0.5 * rho * Math.Pow(U, 2) * chord * Cl * dy;
         }
-        public double Get_dD(double rho, double Nb, double U, double chord, double Cd, double dy)
+        public double Get_dD(double rho, double U, double chord, double Cd, double dy)
         {
-            return 0.5 * rho * Nb * Math.Pow(U, 2) * chord * Cd * dy;
+            return 0.5 * rho * Math.Pow(U, 2) * chord * Cd * dy;
         }
 
         public double Get_dFx(double dL, double dD, double phi)
@@ -104,7 +104,7 @@ namespace csbemt
 
         public double Get_rambda(double Ct)
         {
-            return Math.Sqrt(Ct / 2); ;
+            return Math.Sqrt(Ct / 2);
         }
 
         public double Get_dT(double Nb, double dFz)

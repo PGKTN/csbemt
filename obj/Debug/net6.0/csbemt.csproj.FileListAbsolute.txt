@@ -323,9 +323,10 @@ C:\csbemt\obj\Debug\net6.0\csbemt.GeneratedMSBuildEditorConfig.editorconfig
 C:\csbemt\obj\Debug\net6.0\csbemt.AssemblyInfoInputs.cache
 C:\csbemt\obj\Debug\net6.0\csbemt.AssemblyInfo.cs
 C:\csbemt\obj\Debug\net6.0\csbemt.csproj.CoreCompileInputs.cache
-C:\csbemt\obj\Debug\net6.0\csbemt.csproj.CopyComplete
 C:\csbemt\obj\Debug\net6.0\csbemt.dll
 C:\csbemt\obj\Debug\net6.0\refint\csbemt.dll
 C:\csbemt\obj\Debug\net6.0\csbemt.pdb
 C:\csbemt\obj\Debug\net6.0\csbemt.genruntimeconfig.cache
 C:\csbemt\obj\Debug\net6.0\ref\csbemt.dll
+C:\csbemt\obj\Debug\net6.0\csbemt.sourcelink.json
+C:\csbemt\obj\Debug\net6.0\csbemt.csproj.Up2Date
