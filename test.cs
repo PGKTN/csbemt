@@ -182,7 +182,7 @@ namespace csbemt
             List<double> dL = new List<double>();
             for (int i = 0; i < sections.Length; i++)
             {
-                dL.Add(Calc.Get_dL(rho, U[i], chord[i], Cl[i], dy));
+                dL.Add(Calc.Get_dL(rho, Nb, U[i], chord[i], Cl[i], dy));
                 Console.WriteLine("dL[" + i + "] : " + dL[i]);
 
                 Lift += dL[i];
@@ -193,7 +193,7 @@ namespace csbemt
             List<double> dD = new List<double>();
             for (int i = 0; i < sections.Length; i++)
             {
-                dD.Add(Calc.Get_dD(rho, U[i], chord[i], Cd[i], dy));
+                dD.Add(Calc.Get_dD(rho, Nb, U[i], chord[i], Cd[i], dy));
                 Console.WriteLine("dD[" + i + "] : " + dD[i]);
 
                 Drag += dD[i];

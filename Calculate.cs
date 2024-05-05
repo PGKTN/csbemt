@@ -83,13 +83,13 @@ namespace csbemt
             return Ct * rho * Math.PI * Math.Pow(radius, 2) * Math.Pow(omega * radius, 2);
         }
 
-        public double Get_dL(double rho, double U, double chord, double Cl, double dy)
+        public double Get_dL(double rho, double Nb, double U, double chord, double Cl, double dy)
         {
-            return 0.5 * rho * Math.Pow(U, 2) * chord * Cl * dy;
+            return 0.5 * rho * Nb * Math.Pow(U, 2) * chord * Cl * dy;
         }
-        public double Get_dD(double rho, double U, double chord, double Cd, double dy)
+        public double Get_dD(double rho, double Nb, double U, double chord, double Cd, double dy)
         {
-            return 0.5 * rho * Math.Pow(U, 2) * chord * Cd * dy;
+            return 0.5 * rho * Nb * Math.Pow(U, 2) * chord * Cd * dy;
         }
 
         public double Get_dFx(double dL, double dD, double phi)
